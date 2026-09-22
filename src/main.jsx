@@ -3,10 +3,6 @@ import { createRoot } from "react-dom/client";
 import { Table2, ListOrdered, Lock, CalendarDays } from "lucide-react";
 import "./styles.css";
 
-// Browser talks only to our own Vite origin.
-// Vite proxies /api/* -> https://api.football-data.org/v4/*
-const API_BASE = "/api";
-
 const COMPETITIONS = [
   { code: "CL", name: "Champions League", short: "UCL", flag: "ucl" },
   { code: "PL", name: "Premier League", short: "ENG", flag: "eng" },
@@ -19,19 +15,30 @@ const COMPETITIONS = [
 async function apiFetch(path, { unfoldGoals = false } = {}) {
   const headers = { Accept: "application/json" };
 
-  // This header is safe to send from the browser to our local Vite proxy.
-  // The API token itself is added by vite.config.js, not by React.
-  if (unfoldGoals) headers["X-Unfold-Goals"] = "true";
+  if (unfoldGoals) {
+    headers["X-Unfold-Goals"] = "true";
+  }
+
+  // Separate the football-data path from its query parameters.
+  const [pathname, queryString = ""] = path.replace(/^\//, "").split("?");
+
+  const params = new URLSearchParams(queryString);
+  params.set("path", pathname);
 
   let response;
+
   try {
-    response = await fetch(`${API_BASE}${path}`, { headers });
+    response = await fetch(`/api/football?${params.toString()}`, {
+      headers
+    });
   } catch (error) {
-    throw new Error(`Network/proxy error: ${error.message}`);
+    throw new Error(`Network/API error: ${error.message}`);
   }
 
   const raw = await response.text();
+
   let body = null;
+
   try {
     body = raw ? JSON.parse(raw) : null;
   } catch {
@@ -39,10 +46,18 @@ async function apiFetch(path, { unfoldGoals = false } = {}) {
   }
 
   if (!response.ok) {
-    const detail = body?.message || body?.error || raw || "No details returned";
+    const detail =
+      body?.message ||
+      body?.error ||
+      raw ||
+      "No details returned";
+
     if (response.status === 401 || response.status === 403) {
-      throw new Error(`HTTP ${response.status}: ${detail}. Check FOOTBALL_DATA_TOKEN in .env.local and your API-plan access.`);
+      throw new Error(
+        `HTTP ${response.status}: ${detail}. Check FOOTBALL_DATA_TOKEN in Vercel.`
+      );
     }
+
     throw new Error(`HTTP ${response.status}: ${detail}`);
   }
 

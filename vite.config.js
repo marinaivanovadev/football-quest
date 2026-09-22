@@ -7,8 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
 
-    // Required for GitHub Pages
-    base: "/football-quest/",
+  
 
     server: {
       proxy: {
