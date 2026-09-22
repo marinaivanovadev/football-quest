@@ -97,9 +97,15 @@
   vertical-align: middle;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
-/* ---------- iPhone / mobile fixes ---------- */
+/* =========================================
+   iPhone / Mobile
+   ========================================= */
 
 @media (max-width: 600px) {
+
+  body {
+    font-size: 18px;
+  }
 
   .topbar {
     padding: 20px 14px 14px;
@@ -109,138 +115,144 @@
     padding: 0 14px 30px;
   }
 
-  /* Tabs stay inside the phone screen */
-  .tabs {
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 4px;
-  }
-
-  .tabs button {
-    flex-shrink: 0;
-    padding: 9px 10px;
-    font-size: 13px;
-  }
-
-  /* Top scorers */
-  .scorer-row {
-    grid-template-columns: 28px minmax(0, 1fr) auto;
-    gap: 6px;
-    padding: 10px 2px;
-    font-size: 13px;
-    width: 100%;
-  }
-
-  .scorer-row>* {
-    min-width: 0;
-  }
-
-  .player-flag {
-    width: 20px;
-    height: 14px;
-    margin-left: 4px;
-  }
-
-  .panel {
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-  }
-}
-/* Make all navigation buttons fit on iPhone */
-@media (max-width: 600px) {
-  .tabs {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 4px;
-    width: 100%;
-    overflow: visible;
-  }
-
-  .tabs button {
-    min-width: 0;
-    width: 100%;
-    padding: 9px 3px;
-    font-size: 11px;
-    gap: 3px;
-    justify-content: center;
-    white-space: nowrap;
-  }
-
-  .tabs button svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-  }
-}
-/* iPhone / small-screen readability */
-@media (max-width: 600px) {
-  body {
-    font-size: 18px;
-  }
-    .tabs button svg {
-      width: 21px;
-      height: 21px;
-    }
   /* App title */
   .eyebrow {
     font-size: 18px;
     font-weight: 800;
   }
-     .tabs {
-       gap: 8px;
-     }
 
-  /* League buttons */
-  .competition-row button {
-    font-size: 17px;
-    min-height: 52px;
+  h1 {
+    font-size: 30px;
+  }
+
+  /* -----------------------------------------
+     League selector
+     ----------------------------------------- */
+
+  .competition-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  .competition-btn {
+    min-height: 60px;
+    padding: 8px 6px;
+    font-size: 16px;
   }
 
   .league-badge {
-    font-size: 15px;
-    min-width: 55px;
-    height: 34px;
+    min-width: 52px;
+    height: 32px;
+    padding: 0 7px;
+    font-size: 14px;
   }
 
-  /* Matches / Next Matches / Table / Top Scorers */
+  .competition-btn small {
+    font-size: 13px;
+  }
+
+  /* -----------------------------------------
+     Main navigation
+     Matches | Next Matches
+     Table   | Top Scorers
+     ----------------------------------------- */
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 16px;
+    overflow: visible;
+  }
+
   .tabs button {
-        font-size: 18px;
-          font-weight: 700;
-          min-height: 54px;
-          padding: 10px 12px;
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+
+    padding: 10px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 18px;
+    font-weight: 750;
+
+    white-space: nowrap;
   }
 
-  /* Team names */
-  .team-name {
-    font-size: 19px;
-    font-weight: 700;
+  .tabs button svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
   }
 
-  /* Scores */
+  /* -----------------------------------------
+     Match cards
+     ----------------------------------------- */
+
+  .match-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .match-card {
+    padding: 16px 12px;
+  }
+
+  .match-date {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .teams {
+    gap: 8px;
+  }
+
+  .teams strong {
+    font-size: 22px;
+  }
+
   .score {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 900;
   }
 
-  /* Match date / matchday */
-  .match-meta,
-  .muted,
-  .small {
+  /* Upcoming matches */
+
+  .upcoming-teams {
+    gap: 7px;
+  }
+
+  .upcoming-teams strong {
+    font-size: 16px;
+    padding: 5px 7px;
+  }
+
+  .matchday {
     font-size: 15px;
   }
 
-  /* Goal scorer */
+  /* Goal information */
+
   .goal-row {
     font-size: 16px;
   }
 
-  /* Table */
+  /* -----------------------------------------
+     League table
+     ----------------------------------------- */
+
+  .panel {
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   table {
     font-size: 16px;
   }
@@ -251,15 +263,56 @@
 
   td {
     font-size: 16px;
+    padding: 10px 6px;
   }
 
-  /* Top scorers */
+  .team-name {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  /* -----------------------------------------
+     Top scorers
+     ----------------------------------------- */
+
   .scorer-row {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+
+    gap: 7px;
+    padding: 12px 3px;
+
     font-size: 18px;
+    width: 100%;
+  }
+
+  .scorer-row>* {
+    min-width: 0;
   }
 
   .player-flag {
     width: 26px;
     height: 18px;
+    margin-left: 6px;
+  }
+
+  /* -----------------------------------------
+     Other text
+     ----------------------------------------- */
+
+  .muted,
+  .small {
+    font-size: 15px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .section-heading h3 {
+    font-size: 20px;
+  }
+
+  footer {
+    font-size: 13px;
   }
 }
