@@ -97,3 +97,58 @@
   vertical-align: middle;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
+/* ---------- iPhone / mobile fixes ---------- */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 20px 14px 14px;
+  }
+
+  main {
+    padding: 0 14px 30px;
+  }
+
+  /* Tabs stay inside the phone screen */
+  .tabs {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .tabs button {
+    flex-shrink: 0;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  /* Top scorers */
+  .scorer-row {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    gap: 6px;
+    padding: 10px 2px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .scorer-row>* {
+    min-width: 0;
+  }
+
+  .player-flag {
+    width: 20px;
+    height: 14px;
+    margin-left: 4px;
+  }
+
+  .panel {
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+}
