@@ -6,6 +6,10 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+
+    // Required for GitHub Pages
+    base: "/football-quest/",
+
     server: {
       proxy: {
         "/api": {
@@ -16,9 +20,11 @@ export default defineConfig(({ mode }) => {
           configure: (proxy) => {
             proxy.on("proxyReq", (proxyReq) => {
               const token = env.FOOTBALL_DATA_TOKEN;
+
               if (token) {
                 proxyReq.setHeader("X-Auth-Token", token);
               }
+
               proxyReq.setHeader("Accept", "application/json");
             });
           }
