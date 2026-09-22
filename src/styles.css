@@ -178,3 +178,80 @@
     flex-shrink: 0;
   }
 }
+/* iPhone / small-screen readability */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  /* App title */
+  .eyebrow {
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  /* League buttons */
+  .competition-row button {
+    font-size: 17px;
+    min-height: 52px;
+  }
+
+  .league-badge {
+    font-size: 15px;
+    min-width: 55px;
+    height: 34px;
+  }
+
+  /* Matches / Next Matches / Table / Top Scorers */
+  .tabs button {
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  /* Team names */
+  .team-name {
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  /* Scores */
+  .score {
+    font-size: 26px;
+    font-weight: 900;
+  }
+
+  /* Match date / matchday */
+  .match-meta,
+  .muted,
+  .small {
+    font-size: 15px;
+  }
+
+  /* Goal scorer */
+  .goal-row {
+    font-size: 16px;
+  }
+
+  /* Table */
+  table {
+    font-size: 16px;
+  }
+
+  th {
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 16px;
+  }
+
+  /* Top scorers */
+  .scorer-row {
+    font-size: 18px;
+  }
+
+  .player-flag {
+    width: 26px;
+    height: 18px;
+  }
+}
