@@ -183,12 +183,18 @@
   body {
     font-size: 18px;
   }
-
+    .tabs button svg {
+      width: 21px;
+      height: 21px;
+    }
   /* App title */
   .eyebrow {
     font-size: 18px;
     font-weight: 800;
   }
+     .tabs {
+       gap: 8px;
+     }
 
   /* League buttons */
   .competition-row button {
@@ -204,8 +210,10 @@
 
   /* Matches / Next Matches / Table / Top Scorers */
   .tabs button {
-    font-size: 16px;
-    min-height: 48px;
+        font-size: 18px;
+          font-weight: 700;
+          min-height: 54px;
+          padding: 10px 12px;
   }
 
   /* Team names */
