@@ -157,40 +157,42 @@
      Table   | Top Scorers
      ----------------------------------------- */
 
-  .tabs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    width: 100%;
-    margin-bottom: 16px;
-    overflow: visible;
-  }
-
-  .tabs button {
-    width: 100%;
-    min-width: 0;
-    min-height: 56px;
-
-    padding: 10px 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    font-size: 18px;
-    font-weight: 750;
-
-    white-space: nowrap;
-  }
-
-  .tabs button svg {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-  }
-
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  
+    .tabs button {
+      width: 100%;
+      min-width: 0;
+      min-height: 64px;
+      padding: 8px 6px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      gap: 6px;
+  
+      font-size: 17px;
+      font-weight: 750;
+  
+      /* IMPORTANT */
+      white-space: normal;
+      text-align: center;
+      line-height: 1.15;
+      overflow-wrap: normal;
+    }
+  
+    .tabs button svg {
+      width: 21px;
+      height: 21px;
+      min-width: 21px;
+      flex-shrink: 0;
+    }
   /* -----------------------------------------
      Match cards
      ----------------------------------------- */
