@@ -193,128 +193,63 @@
       min-width: 21px;
       flex-shrink: 0;
     }
-  /* -----------------------------------------
-     Match cards
-     ----------------------------------------- */
+ /* Match cards - larger for iPhone */
 
-  .match-grid {
-    grid-template-columns: 1fr;
-  }
+ .match-card {
+   padding: 18px 12px;
+ }
 
-  .match-card {
-    padding: 16px 12px;
-  }
+ /* Date and time */
+ .match-date {
+   font-size: 18px;
+   font-weight: 600;
+   margin-bottom: 14px;
+ }
 
-  .match-date {
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
+ /* Team names */
+ .teams {
+   gap: 8px;
+ }
 
-  .teams {
-    gap: 8px;
-  }
+ .teams strong {
+   font-size: 25px;
+   font-weight: 800;
+   line-height: 1.15;
+   white-space: normal;
+ }
 
-  .teams strong {
-    font-size: 22px;
-  }
+ /* Score */
+ .score {
+   font-size: 34px;
+   font-weight: 900;
+ }
 
-  .score {
-    font-size: 28px;
-    font-weight: 900;
-  }
+ /* Upcoming match team names */
+ .upcoming-teams {
+   gap: 8px;
+ }
 
-  /* Upcoming matches */
+ .upcoming-teams>div {
+   font-size: 23px;
+   font-weight: 800;
+   line-height: 1.15;
+ }
 
-  .upcoming-teams {
-    gap: 7px;
-  }
+ /* VS */
+ .upcoming-teams strong {
+   font-size: 18px;
+   padding: 6px 9px;
+ }
 
-  .upcoming-teams strong {
-    font-size: 16px;
-    padding: 5px 7px;
-  }
+ /* Matchday */
+ .matchday {
+   font-size: 17px;
+   font-weight: 600;
+ }
 
-  .matchday {
-    font-size: 15px;
-  }
-
-  /* Goal information */
-
-  .goal-row {
-    font-size: 16px;
-  }
-
-  /* -----------------------------------------
-     League table
-     ----------------------------------------- */
-
-  .panel {
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-  }
-
-  table {
-    font-size: 16px;
-  }
-
-  th {
-    font-size: 14px;
-  }
-
-  td {
-    font-size: 16px;
-    padding: 10px 6px;
-  }
-
-  .team-name {
-    font-size: 17px;
-    font-weight: 700;
-  }
-
-  /* -----------------------------------------
-     Top scorers
-     ----------------------------------------- */
-
-  .scorer-row {
-    grid-template-columns: 30px minmax(0, 1fr) auto;
-
-    gap: 7px;
-    padding: 12px 3px;
-
-    font-size: 18px;
-    width: 100%;
-  }
-
-  .scorer-row>* {
-    min-width: 0;
-  }
-
-  .player-flag {
-    width: 26px;
-    height: 18px;
-    margin-left: 6px;
-  }
-
-  /* -----------------------------------------
-     Other text
-     ----------------------------------------- */
-
-  .muted,
-  .small {
-    font-size: 15px;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-  }
-
-  .section-heading h3 {
-    font-size: 20px;
-  }
-
-  footer {
-    font-size: 13px;
-  }
+ /* Goal scorers */
+ .goal-row {
+   font-size: 18px;
+   line-height: 1.4;
+ }
 }
